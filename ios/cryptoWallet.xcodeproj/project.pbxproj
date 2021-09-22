@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* lmwalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* lmwalletTests.m */; };
+		00E356F31AD99517003FC87E /* cryptoWalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* cryptoWalletTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		62CF82140DB9DB33DC3E774A /* libPods-lmwallet-lmwalletTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058F99079938DB47E26D4392 /* libPods-lmwallet-lmwalletTests.a */; };
-		7A3717408AD76E83A51225A6 /* libPods-lmwallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD8533194527AF4C5A51FF2 /* libPods-lmwallet.a */; };
+		62CF82140DB9DB33DC3E774A /* libPods-cryptoWallet-cryptoWalletTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058F99079938DB47E26D4392 /* libPods-cryptoWallet-cryptoWalletTests.a */; };
+		7A3717408AD76E83A51225A6 /* libPods-cryptoWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD8533194527AF4C5A51FF2 /* libPods-cryptoWallet.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -22,27 +22,27 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = lmwallet;
+			remoteInfo = cryptoWallet;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* lmwalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lmwalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* cryptoWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cryptoWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* lmwalletTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lmwalletTests.m; sourceTree = "<group>"; };
-		058F99079938DB47E26D4392 /* libPods-lmwallet-lmwalletTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lmwallet-lmwalletTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07F961A680F5B00A75B9A /* lmwallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lmwallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = lmwallet/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = lmwallet/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = lmwallet/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = lmwallet/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = lmwallet/main.m; sourceTree = "<group>"; };
-		457588C77D0E4AF47D8593BC /* Pods-lmwallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lmwallet.debug.xcconfig"; path = "Target Support Files/Pods-lmwallet/Pods-lmwallet.debug.xcconfig"; sourceTree = "<group>"; };
-		60B53E1561E7FE76698689B9 /* Pods-lmwallet-lmwalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lmwallet-lmwalletTests.release.xcconfig"; path = "Target Support Files/Pods-lmwallet-lmwalletTests/Pods-lmwallet-lmwalletTests.release.xcconfig"; sourceTree = "<group>"; };
-		80DFCEC036CB5E06D3B5288D /* Pods-lmwallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lmwallet.release.xcconfig"; path = "Target Support Files/Pods-lmwallet/Pods-lmwallet.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = lmwallet/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BBD8533194527AF4C5A51FF2 /* libPods-lmwallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lmwallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF4DB81BB2F68EFC7AC2A7BA /* Pods-lmwallet-lmwalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lmwallet-lmwalletTests.debug.xcconfig"; path = "Target Support Files/Pods-lmwallet-lmwalletTests/Pods-lmwallet-lmwalletTests.debug.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* cryptoWalletTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cryptoWalletTests.m; sourceTree = "<group>"; };
+		058F99079938DB47E26D4392 /* libPods-cryptoWallet-cryptoWalletTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cryptoWallet-cryptoWalletTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* cryptoWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cryptoWallet/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = cryptoWallet/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = cryptoWallet/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cryptoWallet/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cryptoWallet/main.m; sourceTree = "<group>"; };
+		457588C77D0E4AF47D8593BC /* Pods-cryptoWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoWallet.debug.xcconfig"; path = "Target Support Files/Pods-cryptoWallet/Pods-cryptoWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		60B53E1561E7FE76698689B9 /* Pods-cryptoWallet-cryptoWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoWallet-cryptoWalletTests.release.xcconfig"; path = "Target Support Files/Pods-cryptoWallet-cryptoWalletTests/Pods-cryptoWallet-cryptoWalletTests.release.xcconfig"; sourceTree = "<group>"; };
+		80DFCEC036CB5E06D3B5288D /* Pods-cryptoWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoWallet.release.xcconfig"; path = "Target Support Files/Pods-cryptoWallet/Pods-cryptoWallet.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = cryptoWallet/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBD8533194527AF4C5A51FF2 /* libPods-cryptoWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cryptoWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF4DB81BB2F68EFC7AC2A7BA /* Pods-cryptoWallet-cryptoWalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoWallet-cryptoWalletTests.debug.xcconfig"; path = "Target Support Files/Pods-cryptoWallet-cryptoWalletTests/Pods-cryptoWallet-cryptoWalletTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62CF82140DB9DB33DC3E774A /* libPods-lmwallet-lmwalletTests.a in Frameworks */,
+				62CF82140DB9DB33DC3E774A /* libPods-cryptoWallet-cryptoWalletTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,20 +59,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A3717408AD76E83A51225A6 /* libPods-lmwallet.a in Frameworks */,
+				7A3717408AD76E83A51225A6 /* libPods-cryptoWallet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* lmwalletTests */ = {
+		00E356EF1AD99517003FC87E /* cryptoWalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* lmwalletTests.m */,
+				00E356F21AD99517003FC87E /* cryptoWalletTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = lmwalletTests;
+			path = cryptoWalletTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -83,7 +83,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* lmwallet */ = {
+		13B07FAE1A68108700A75B9A /* cryptoWallet */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -93,16 +93,16 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = lmwallet;
+			name = cryptoWallet;
 			sourceTree = "<group>";
 		};
 		179693FECA78C240E6A083FE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				457588C77D0E4AF47D8593BC /* Pods-lmwallet.debug.xcconfig */,
-				80DFCEC036CB5E06D3B5288D /* Pods-lmwallet.release.xcconfig */,
-				BF4DB81BB2F68EFC7AC2A7BA /* Pods-lmwallet-lmwalletTests.debug.xcconfig */,
-				60B53E1561E7FE76698689B9 /* Pods-lmwallet-lmwalletTests.release.xcconfig */,
+				457588C77D0E4AF47D8593BC /* Pods-cryptoWallet.debug.xcconfig */,
+				80DFCEC036CB5E06D3B5288D /* Pods-cryptoWallet.release.xcconfig */,
+				BF4DB81BB2F68EFC7AC2A7BA /* Pods-cryptoWallet-cryptoWalletTests.debug.xcconfig */,
+				60B53E1561E7FE76698689B9 /* Pods-cryptoWallet-cryptoWalletTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -112,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				BBD8533194527AF4C5A51FF2 /* libPods-lmwallet.a */,
-				058F99079938DB47E26D4392 /* libPods-lmwallet-lmwalletTests.a */,
+				BBD8533194527AF4C5A51FF2 /* libPods-cryptoWallet.a */,
+				058F99079938DB47E26D4392 /* libPods-cryptoWallet-cryptoWalletTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,9 +128,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* lmwallet */,
+				13B07FAE1A68108700A75B9A /* cryptoWallet */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* lmwalletTests */,
+				00E356EF1AD99517003FC87E /* cryptoWalletTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				179693FECA78C240E6A083FE /* Pods */,
@@ -143,8 +143,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* lmwallet.app */,
-				00E356EE1AD99517003FC87E /* lmwalletTests.xctest */,
+				13B07F961A680F5B00A75B9A /* cryptoWallet.app */,
+				00E356EE1AD99517003FC87E /* cryptoWalletTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* lmwalletTests */ = {
+		00E356ED1AD99517003FC87E /* cryptoWalletTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "lmwalletTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "cryptoWalletTests" */;
 			buildPhases = (
 				E6961FB775A1BA91D553CB48 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -167,14 +167,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = lmwalletTests;
-			productName = lmwalletTests;
-			productReference = 00E356EE1AD99517003FC87E /* lmwalletTests.xctest */;
+			name = cryptoWalletTests;
+			productName = cryptoWalletTests;
+			productReference = 00E356EE1AD99517003FC87E /* cryptoWalletTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* lmwallet */ = {
+		13B07F861A680F5B00A75B9A /* cryptoWallet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "lmwallet" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "cryptoWallet" */;
 			buildPhases = (
 				66797AA4E7FB5BA63EDA38E8 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -188,9 +188,9 @@
 			);
 			dependencies = (
 			);
-			name = lmwallet;
-			productName = lmwallet;
-			productReference = 13B07F961A680F5B00A75B9A /* lmwallet.app */;
+			name = cryptoWallet;
+			productName = cryptoWallet;
+			productReference = 13B07F961A680F5B00A75B9A /* cryptoWallet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "lmwallet" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "cryptoWallet" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,8 +223,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* lmwallet */,
-				00E356ED1AD99517003FC87E /* lmwalletTests */,
+				13B07F861A680F5B00A75B9A /* cryptoWallet */,
+				00E356ED1AD99517003FC87E /* cryptoWalletTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,15 +269,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lmwallet-lmwalletTests/Pods-lmwallet-lmwalletTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cryptoWallet-cryptoWalletTests/Pods-cryptoWallet-cryptoWalletTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lmwallet-lmwalletTests/Pods-lmwallet-lmwalletTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cryptoWallet-cryptoWalletTests/Pods-cryptoWallet-cryptoWalletTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lmwallet-lmwalletTests/Pods-lmwallet-lmwalletTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cryptoWallet-cryptoWalletTests/Pods-cryptoWallet-cryptoWalletTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		66797AA4E7FB5BA63EDA38E8 /* [CP] Check Pods Manifest.lock */ = {
@@ -295,7 +295,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-lmwallet-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-cryptoWallet-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -308,15 +308,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lmwallet/Pods-lmwallet-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cryptoWallet/Pods-cryptoWallet-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-lmwallet/Pods-lmwallet-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-cryptoWallet/Pods-cryptoWallet-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lmwallet/Pods-lmwallet-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cryptoWallet/Pods-cryptoWallet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6961FB775A1BA91D553CB48 /* [CP] Check Pods Manifest.lock */ = {
@@ -334,7 +334,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-lmwallet-lmwalletTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-cryptoWallet-cryptoWalletTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,7 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* lmwalletTests.m in Sources */,
+				00E356F31AD99517003FC87E /* cryptoWalletTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +385,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* lmwallet */;
+			target = 13B07F861A680F5B00A75B9A /* cryptoWallet */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -393,14 +393,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF4DB81BB2F68EFC7AC2A7BA /* Pods-lmwallet-lmwalletTests.debug.xcconfig */;
+			baseConfigurationReference = BF4DB81BB2F68EFC7AC2A7BA /* Pods-cryptoWallet-cryptoWalletTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = lmwalletTests/Info.plist;
+				INFOPLIST_FILE = cryptoWalletTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,17 +414,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lmwallet.app/lmwallet";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cryptoWallet.app/cryptoWallet";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60B53E1561E7FE76698689B9 /* Pods-lmwallet-lmwalletTests.release.xcconfig */;
+			baseConfigurationReference = 60B53E1561E7FE76698689B9 /* Pods-cryptoWallet-cryptoWalletTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = lmwalletTests/Info.plist;
+				INFOPLIST_FILE = cryptoWalletTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,19 +438,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lmwallet.app/lmwallet";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cryptoWallet.app/cryptoWallet";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 457588C77D0E4AF47D8593BC /* Pods-lmwallet.debug.xcconfig */;
+			baseConfigurationReference = 457588C77D0E4AF47D8593BC /* Pods-cryptoWallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = lmwallet/Info.plist;
+				INFOPLIST_FILE = cryptoWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,7 +461,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = lmwallet;
+				PRODUCT_NAME = cryptoWallet;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -470,12 +470,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80DFCEC036CB5E06D3B5288D /* Pods-lmwallet.release.xcconfig */;
+			baseConfigurationReference = 80DFCEC036CB5E06D3B5288D /* Pods-cryptoWallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = lmwallet/Info.plist;
+				INFOPLIST_FILE = cryptoWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +486,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = lmwallet;
+				PRODUCT_NAME = cryptoWallet;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -618,7 +618,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "lmwalletTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "cryptoWalletTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -627,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "lmwallet" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "cryptoWallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -636,7 +636,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "lmwallet" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "cryptoWallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

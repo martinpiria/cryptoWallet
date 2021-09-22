@@ -1,6 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import ApplicationNavigator from '../lmwallet/src/module/navigation/ApplicationNavigator';
+import ApplicationNavigator from '../cryptoWallet/src/module/navigation/ApplicationNavigator';
 import {enableScreens} from 'react-native-screens';
 import {LogBox, StatusBar} from 'react-native';
 import LMLoading from './src/component/common/LMLoading';

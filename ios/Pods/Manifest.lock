@@ -479,7 +479,7 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   FBLazyVector: e686045572151edef46010a6f819ade377dfeb4b
-  FBReactNativeSpec: 08e11fa2d23a0b0e1b403bb553f3e22f3d2de25e
+  FBReactNativeSpec: e4742868dcf664aa887e87420e573e7465c7e540
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
   libwebp: e90b9c01d99205d03b6bb8f2c8c415e5a4ef66f0
   Permission-Camera: ffd449756840ddc0f6294e95d688fecaadfe238c
@@ -526,6 +526,6 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
   Yoga: 575c581c63e0d35c9a83f4b46d01d63abc1100ac
 
-PODFILE CHECKSUM: 8dd632fdcfbd8291f05089778ea8410c93cb486e
+PODFILE CHECKSUM: 05a4853fea8820dcd3d1e23afbc3e70353095bc2
 
 COCOAPODS: 1.10.1

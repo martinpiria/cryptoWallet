@@ -1,1 +1,1 @@
-lmwallet
+cryptoWallet
