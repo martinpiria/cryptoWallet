@@ -1,35 +1,35 @@
-import React, {useState} from 'react';
-import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {gray, green, primary, secondBackground} from '../../component/common/LMStyle';
+import React, { useState } from 'react';
+import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { gray, green, primary, secondBackground } from '../../component/common/LMStyle';
 import LMButton from '../../component/common/LMButton';
-import {Root} from 'popup-ui';
+import { Root } from 'popup-ui';
 import LMTextInput from '../../component/common/LMTextInput';
-import {Controller, useForm} from 'react-hook-form';
-import {yupResolver} from '@hookform/resolvers/yup';
+import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import {useDispatch} from 'react-redux';
-import {UserAction} from '../../persistent/user/UserAction';
+import { useDispatch } from 'react-redux';
+import { UserAction } from '../../persistent/user/UserAction';
 import LMAlert from '../../component/common/LMAlert';
 import LMToast from '../../component/common/LMToast';
 import LMLoading from '../../component/common/LMLoading';
 
-export default function WalletLoginScreen({navigation,lang}){
+export default function WalletLoginScreen({ navigation, lang }) {
     const dispatch = useDispatch();
     const schema = yup.object().shape({
-        password: yup.string().required(lang.pleaseInputPassword).min(8,lang.passwordMustBeAtLeast8Characters)
+        password: yup.string().required(lang.pleaseInputPassword).min(8, lang.passwordMustBeAtLeast8Characters)
     });
-    const {control, handleSubmit, errors} = useForm({
+    const { control, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema),
     });
-    const [securePassword,setSecurePassword] = useState(true);
+    const [securePassword, setSecurePassword] = useState(true);
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-    const onSubmit = ({password}) => {
+    const onSubmit = ({ password }) => {
         LMLoading.show();
         dispatch(UserAction.signIn({
-            password : password
-        })).then((data)=>{
-            const {success} = data;
-            if(!success){
+            password: password
+        })).then((data) => {
+            const { success } = data;
+            if (!success) {
                 LMToast.error({
                     title: lang.error,
                     text: lang.invalidCredentials,
@@ -40,23 +40,23 @@ export default function WalletLoginScreen({navigation,lang}){
     return (
         <Root>
             <SafeAreaView style={styles.container}>
-                <Image source={require('../../../assets/circle.png')} style={styles.image} resizeMode={'stretch'}/>
-                <View style={styles.contentContainer}>
+                <Image source={require('../../../assets/circle.png')} style={styles.image} resizeMode={'stretch'} />
+                {/*<View style={styles.contentContainer}>
                     <Image source={require('../../../assets/logo.png')} style={styles.loginBg} resizeMode={'stretch'}/>
-                </View>
-                <View style={{flex:1}}>
+                </View>*/}
+                <View style={{ flex: 1 }}>
                     <View style={styles.bottomContainer}>
                         <View style={styles.infoContainer}>
                             <View style={styles.block}>
-                                <Text style={[styles.message, {fontSize: 32, textAlign: 'center'}]}>{lang.welcomeBack}</Text>
+                                <Text style={[styles.message, { fontSize: 32, textAlign: 'center' }]}>{lang.welcomeBack}</Text>
                             </View>
                             <View style={styles.block}>
-                                <Text style={[styles.message,{color : gray, textAlign : 'center'}]}>{lang.theBestDecentralized}</Text>
+                                <Text style={[styles.message, { color: gray, textAlign: 'center' }]}>{lang.theBestDecentralized}</Text>
                             </View>
                             <View style={styles.block}>
                                 <Controller
                                     control={control}
-                                    render={({onChange, onBlur, value}) => (
+                                    render={({ onChange, onBlur, value }) => (
                                         <LMTextInput
                                             label={lang.password}
                                             onBlur={onBlur}
@@ -65,7 +65,7 @@ export default function WalletLoginScreen({navigation,lang}){
                                             error={errors['password']}
                                             secureTextEntry={securePassword}
                                             placeholder={'Password'}
-                                            labelStyle={{color : primary}}
+                                            labelStyle={{ color: primary }}
                                             hint={lang.clickHereToShowYourPassword}
                                             onHintPress={async () => {
                                                 setSecurePassword(false);
@@ -79,10 +79,10 @@ export default function WalletLoginScreen({navigation,lang}){
                                 />
                             </View>
                         </View>
-                        <View style={[styles.buttonsContainer, {marginBottom : 5}]}>
+                        <View style={[styles.buttonsContainer, { marginBottom: 5 }]}>
                             <LMButton
                                 label={lang.confirm}
-                                onPress={ handleSubmit(onSubmit)}
+                                onPress={handleSubmit(onSubmit)}
                             />
                         </View>
                         <View style={styles.buttonsContainer}>
@@ -90,21 +90,21 @@ export default function WalletLoginScreen({navigation,lang}){
                                 label={lang.importWallet}
                                 onPress={() => {
                                     LMAlert.show({
-                                        message : lang.areYouSureWantToEraseYourWallet,
-                                        content : () => {
+                                        message: lang.areYouSureWantToEraseYourWallet,
+                                        content: () => {
                                             return (
                                                 <>
                                                     <View>
-                                                        <Text style={{textAlign: 'justify'}}>{lang.yourCurrentWalletAccountsAssetsWillBe} <Text style={{fontWeight : 'bold'}}>{lang.removedFromThisAppPermanently}</Text> {lang.thisActionCannotBeUndone}</Text>
+                                                        <Text style={{ textAlign: 'justify' }}>{lang.yourCurrentWalletAccountsAssetsWillBe} <Text style={{ fontWeight: 'bold' }}>{lang.removedFromThisAppPermanently}</Text> {lang.thisActionCannotBeUndone}</Text>
                                                     </View>
                                                     <View>
-                                                        <Text style={{textAlign: 'justify'}}>{lang.youCanOnlyRecoverThisWalletWithYour} <Text style={{fontWeight : 'bold'}}>{lang.secretRecoveryPhrase}</Text> {lang.wpayDoesNotHaveYourSecretRecoveryPhrase}</Text>
+                                                        <Text style={{ textAlign: 'justify' }}>{lang.youCanOnlyRecoverThisWalletWithYour} <Text style={{ fontWeight: 'bold' }}>{lang.secretRecoveryPhrase}</Text> {lang.wpayDoesNotHaveYourSecretRecoveryPhrase}</Text>
                                                     </View>
                                                 </>
                                             )
                                         },
-                                        onOkPress :  async () => {
-                                            dispatch(UserAction.clear()).then(()=>{
+                                        onOkPress: async () => {
+                                            dispatch(UserAction.clear()).then(() => {
                                                 navigation.navigate("ImportWalletScreen");
                                             });
 

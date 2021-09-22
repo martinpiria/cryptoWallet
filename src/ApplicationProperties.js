@@ -6,93 +6,98 @@ export const ApplicationProperties = {
         chainId: 1,
         ensAddress: '',
         apiUrl: 'https://api.etherscan.io/',
-        txUrl : 'https://etherscan.io/tx/',
+        txUrl: 'https://etherscan.io/tx/',
         displayName: 'Ethereum Mainnet',
-        readonly : true,
-        symbol : 'ETH',
+        readonly: true,
+        symbol: 'ETH',
     },
     NETWORKS: [{
         name: 'homestead',
         chainId: 1,
         ensAddress: '',
         apiUrl: 'https://api.etherscan.io/',
-        txUrl : 'https://etherscan.io/tx/',
+        txUrl: 'https://etherscan.io/tx/',
         displayName: 'Ethereum Mainnet',
-        readonly : true,
-        symbol : 'ETH'
+        readonly: true,
+        symbol: 'ETH'
     }, {
         name: 'rinkeby',
         chainId: 4,
         ensAddress: '',
         apiUrl: 'https://api-rinkeby.etherscan.io/',
-        txUrl : 'https://rinkeby.etherscan.io/tx/',
+        txUrl: 'https://rinkeby.etherscan.io/tx/',
         displayName: 'Rinkeby Test Network',
-        readonly : true,
-        symbol : 'ETH'
+        readonly: true,
+        symbol: 'ETH'
     }, {
         name: 'kovan',
         chainId: 42,
         ensAddress: '',
         apiUrl: 'https://api-kovan.etherscan.io/',
-        txUrl : 'https://kovan.etherscan.io/tx/',
+        txUrl: 'https://kovan.etherscan.io/tx/',
         displayName: 'Kovan Test Network',
-        readonly : true,
-        symbol : 'ETH'
+        readonly: true,
+        symbol: 'ETH'
     }, {
         name: 'ropsten',
         chainId: 3,
         ensAddress: '',
         apiUrl: 'https://api-ropsten.etherscan.io/',
-        txUrl : 'https://ropsten.etherscan.io/tx/',
+        txUrl: 'https://ropsten.etherscan.io/tx/',
         displayName: 'Rosten Test Network',
-        readonly : true,
-        symbol : 'ETH'
+        readonly: true,
+        symbol: 'ETH'
     }, {
         name: 'goerli',
         chainId: 5,
         ensAddress: '',
         apiUrl: 'https://api-goerli.etherscan.io/',
-        txUrl : 'https://goerli.etherscan.io/tx/',
+        txUrl: 'https://goerli.etherscan.io/tx/',
         displayName: 'Goerli Testnet',
-        readonly : true,
-        symbol : 'ETH'
+        readonly: true,
+        symbol: 'ETH'
     }],
-    API_PROVIDERS : {
+    API_PROVIDERS: {
         etherscan: this.ETHERSCAN_API_KEY,
         infura: {
-              projectId: '282501a191624696ae503c0534e8f646',
-              projectSecret: 'aab3efe83fe44e53a30e7cd1afc3fdf0',
+            projectId: '282501a191624696ae503c0534e8f646',
+            projectSecret: 'aab3efe83fe44e53a30e7cd1afc3fdf0',
         },
         alchemy: 'dDowuL9P6nWr22cur5nv6ww_Oj23Jteu'
     },
-    DEFAULT_CURRENCY : {key : 'USD', value : 0},
-    DEFAULT_LANGUAGE : {
-        code : 'en',
-        icon : 'GB',
-        name : 'English'
+    DEFAULT_CURRENCY: { key: 'USD', value: 0 },
+    DEFAULT_LANGUAGE: {
+        code: 'es',
+        icon: 'ES',
+        name: 'Spanish'
     },
-    LANGUAGE_LIST : [{
-            code : 'vi',
-            icon : 'VN',
-            name : 'Tiếng Việt'
-        },
-        {
-            code : 'en',
-            icon : 'GB',
-            name : 'English'
-        }
+    LANGUAGE_LIST: [{
+        code: 'vi',
+        icon: 'VN',
+        name: 'Tiếng Việt'
+    },
+    {
+        code: 'en',
+        icon: 'GB',
+        name: 'English'
+    },
+    {
+        code: 'es',
+        icon: 'ES',
+        name: 'Spanish'
+    }
     ],
-    TIME_FORMAT : 'h:mm:ss a, MMMM Do YYYY',
-    TOKEN_URLS : {
-        compound : 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json',
-        coingecko : 'https://tokens.coingecko.com/uniswap/all.json',
-        optimism : 'https://static.optimism.io/optimism.tokenlist.json',
-        aave : 'https://tokenlist.aave.eth.link/',
-        kleros : 'https://t2crtokens.eth.link/',
-        wrapped : 'https://wrapped.tokensoft.eth.link/',
-        gemini : 'https://www.gemini.com/uniswap/manifest.json',
+    TIME_FORMAT: 'h:mm:ss a, MMMM Do YYYY',
+    TOKEN_URLS: {
+        compound: 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json',
+        coingecko: 'https://tokens.coingecko.com/uniswap/all.json',
+        optimism: 'https://static.optimism.io/optimism.tokenlist.json',
+        aave: 'https://tokenlist.aave.eth.link/',
+        kleros: 'https://t2crtokens.eth.link/',
+        wrapped: 'https://wrapped.tokensoft.eth.link/',
+        gemini: 'https://www.gemini.com/uniswap/manifest.json',
     },
-    COMMON_TOKENS : [
+    COMMON_TOKENS: [
         {
             "name": "Ethers",
             "chainId": 1,

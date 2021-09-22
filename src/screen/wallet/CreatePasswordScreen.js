@@ -1,53 +1,53 @@
-import React, {useState} from 'react';
-import {Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {green, primary, secondBackground} from '../../component/common/LMStyle';
+import React, { useState } from 'react';
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { green, primary, secondBackground } from '../../component/common/LMStyle';
 import LMButton from '../../component/common/LMButton';
 import LMTextInput from '../../component/common/LMTextInput';
 import LMBackButton from '../../component/common/LMBackButton';
-import {Controller, useForm} from 'react-hook-form';
-import {yupResolver} from '@hookform/resolvers/yup';
+import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-export default function CreatePasswordScreen({navigation,route,lang}){
+export default function CreatePasswordScreen({ navigation, route, lang }) {
     const schema = yup.object().shape({
-        password: yup.string().required(lang.password).min(8,lang.passwordMustBeAtLeast8Characters),
+        password: yup.string().required(lang.password).min(8, lang.passwordMustBeAtLeast8Characters),
         confirmPassword: yup.string().required(lang.pleaseInputConfirmPassword).oneOf([yup.ref('password'), null], lang.passwordMustMatch)
     });
-    const {control, handleSubmit, errors} = useForm({
+    const { control, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema),
     });
-    const [securePassword,setSecurePassword] = useState(true);
-    const onSubmit = ({password}) => {
-        navigation.navigate("CreateMnemonicsScreen",{password});
+    const [securePassword, setSecurePassword] = useState(true);
+    const onSubmit = ({ password }) => {
+        navigation.navigate("CreateMnemonicsScreen", { password });
     };
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
     return (
         <SafeAreaView style={styles.container}>
-            <Image source={require('../../../assets/circle.png')} style={styles.image} resizeMode={'stretch'}/>
+            <Image source={require('../../../assets/circle.png')} style={styles.image} resizeMode={'stretch'} />
             <View style={styles.header}>
                 <LMBackButton color={'white'} onPress={() => {
                     navigation.goBack();
-                }}/>
-                <View style={{flex:1, justifyContent : 'center', alignItems : 'center'}}>
+                }} />
+                {/*<View style={{flex:1, justifyContent : 'center', alignItems : 'center'}}>
                     <Image source={require('../../../assets/logo.png')} style={styles.logo} resizeMode={'stretch'}/>
-                </View>
-                <View style={{width : 40}}>
+                </View>*/}
+                <View style={{ width: 40 }}>
 
                 </View>
             </View>
             <View style={styles.contentContainer}>
 
             </View>
-            <View style={{flex:1}}>
+            <View style={{ flex: 1 }}>
                 <View style={styles.bottomContainer}>
                     <View style={styles.infoContainer}>
                         <View style={styles.block}>
-                            <Text style={[styles.message, {fontSize: 32, textAlign: 'center'}]}>{lang.setYourPassword}</Text>
+                            <Text style={[styles.message, { fontSize: 32, textAlign: 'center' }]}>{lang.setYourPassword}</Text>
                         </View>
                         <View style={styles.block}>
                             <Controller
                                 control={control}
-                                render={({onChange, onBlur, value}) => (
+                                render={({ onChange, onBlur, value }) => (
                                     <LMTextInput
                                         label={lang.password}
                                         onBlur={onBlur}
@@ -56,7 +56,7 @@ export default function CreatePasswordScreen({navigation,route,lang}){
                                         error={errors['password']}
                                         secureTextEntry={securePassword}
                                         placeholder={lang.password}
-                                        labelStyle={{color : primary}}
+                                        labelStyle={{ color: primary }}
                                         hint={lang.clickHereToShowYourPassword}
                                         onHintPress={async () => {
                                             setSecurePassword(false);
@@ -72,7 +72,7 @@ export default function CreatePasswordScreen({navigation,route,lang}){
                         <View style={styles.block}>
                             <Controller
                                 control={control}
-                                render={({onChange, onBlur, value}) => (
+                                render={({ onChange, onBlur, value }) => (
                                     <LMTextInput
                                         label={lang.confirmPassword}
                                         onBlur={onBlur}
@@ -81,7 +81,7 @@ export default function CreatePasswordScreen({navigation,route,lang}){
                                         error={errors['confirmPassword']}
                                         secureTextEntry={securePassword}
                                         placeholder={lang.confirmPassword}
-                                        labelStyle={{color : primary}}
+                                        labelStyle={{ color: primary }}
                                         hint={lang.clickHereToShowYourPassword}
                                         onHintPress={async () => {
                                             setSecurePassword(false);
@@ -94,10 +94,10 @@ export default function CreatePasswordScreen({navigation,route,lang}){
                                 defaultValue=""
                             />
                         </View>
-                        <TouchableOpacity style={styles.block} onPress={()=>{
+                        <TouchableOpacity style={styles.block} onPress={() => {
                             navigation.navigate("TermsAndConditionsScreen");
                         }}>
-                            <Text style={{color : primary}}>{lang.byClicking} <Text style={{color : primary, fontWeight : 'bold'}}>{lang.confirm}, </Text> {lang.youHaveAgreed} <Text style={{color : primary, fontWeight : 'bold'}}>{lang.termOfUse}</Text></Text>
+                            <Text style={{ color: primary }}>{lang.byClicking} <Text style={{ color: primary, fontWeight: 'bold' }}>{lang.confirm}, </Text> {lang.youHaveAgreed} <Text style={{ color: primary, fontWeight: 'bold' }}>{lang.termOfUse}</Text></Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.buttonsContainer}>
@@ -198,8 +198,8 @@ const styles = StyleSheet.create({
         padding: 10,
         justifyContent: 'center',
     },
-    logo : {
-        width : 70,
-        height : 50,
+    logo: {
+        width: 70,
+        height: 50,
     },
 });

@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {green, primary, secondBackground, white} from '../../component/common/LMStyle';
+import React, { useEffect, useState } from 'react';
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { green, primary, secondBackground, white } from '../../component/common/LMStyle';
 import LMButton from '../../component/common/LMButton';
-import {BlurView} from '@react-native-community/blur';
+import { BlurView } from '@react-native-community/blur';
 import LMBackButton from '../../component/common/LMBackButton';
-import {Root, Toast} from 'popup-ui';
+import { Root, Toast } from 'popup-ui';
 import WalletModule from '../../module/etherjs/WalletModule';
 
-export default function CreateMnemonicsScreen({navigation, route, lang}) {
-    const {password} = route.params;
+export default function CreateMnemonicsScreen({ navigation, route, lang }) {
+    const { password } = route.params;
     const [mnemonics, setMnemonics] = useState(null);
     const [visible, setVisible] = useState(true);
     useEffect(() => {
@@ -21,8 +21,8 @@ export default function CreateMnemonicsScreen({navigation, route, lang}) {
 
     const renderMnemonic = (mnemonic, index) => (
         <View style={styles.mnemonic} key={index}>
-            <View style={{width: '80%'}}>
-                <Text style={{textAlign: 'left'}}>{index + 1}. {mnemonic}</Text>
+            <View style={{ width: '80%' }}>
+                <Text style={{ textAlign: 'left' }}>{index + 1}. {mnemonic}</Text>
             </View>
         </View>
     );
@@ -43,12 +43,12 @@ export default function CreateMnemonicsScreen({navigation, route, lang}) {
                 {
                     visible &&
                     <TouchableOpacity
-                        style={{position: 'absolute', top: '50%'}}
+                        style={{ position: 'absolute', top: '50%' }}
                         onPress={() => {
                             setVisible(false);
                         }}
                     >
-                        <Text style={{color: secondBackground}}>{lang.clickHereToRevealSecretWords}</Text>
+                        <Text style={styles.secretWords}>{lang.clickHereToRevealSecretWords}</Text>
                     </TouchableOpacity>
                 }
             </View>
@@ -57,22 +57,22 @@ export default function CreateMnemonicsScreen({navigation, route, lang}) {
     return (
         <Root>
             <SafeAreaView style={styles.container}>
-                <Image source={require('../../../assets/circle.png')} style={styles.image} resizeMode={'stretch'}/>
+                <Image source={require('../../../assets/circle.png')} style={styles.image} resizeMode={'stretch'} />
                 <View style={styles.header}>
                     <LMBackButton color={'white'} onPress={() => {
                         navigation.goBack();
-                    }}/>
-                    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                    }} />
+                    {/*<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                         <Image source={require('../../../assets/logo.png')} style={styles.logo} resizeMode={'stretch'}/>
-                    </View>
-                    <View style={{width: 40}}>
+                    </View>*/}
+                    <View style={{ width: 40 }}>
 
                     </View>
                 </View>
                 <View style={styles.contentContainer}>
                     {renderBody()}
                 </View>
-                <View style={{flex: 1}}>
+                <View style={{ flex: 1 }}>
                     <View style={styles.bottomContainer}>
                         <View style={styles.infoContainer}>
                             <View style={styles.block}>
@@ -82,7 +82,7 @@ export default function CreateMnemonicsScreen({navigation, route, lang}) {
                                 }]}>{lang.secureYourWallet}</Text>
                             </View>
                             <View style={styles.block}>
-                                <Text style={[styles.message, {textAlign: 'left'}]}>{lang.writeItSomewhereSafe}</Text>
+                                <Text style={[styles.message, { textAlign: 'left' }]}>{lang.writeItSomewhereSafe}</Text>
                             </View>
                         </View>
                         <View style={styles.buttonsContainer}>
@@ -93,19 +93,19 @@ export default function CreateMnemonicsScreen({navigation, route, lang}) {
                                         Toast.show({
                                             title: lang.warning,
                                             text:
-                                            lang.pleaseClickRevealToGetYourSecretBackupPhrase,
+                                                lang.pleaseClickRevealToGetYourSecretBackupPhrase,
                                             color: '#f39c12',
                                             timing: 2000,
                                             icon: (
                                                 <Image
                                                     source={require('../../../assets/warning.png')}
-                                                    style={{width: 25, height: 25}}
+                                                    style={{ width: 25, height: 25 }}
                                                     resizeMode="contain"
                                                 />
                                             ),
                                         });
                                     } else {
-                                        navigation.navigate('ConfirmMnemonicsScreen', {mnemonics, password});
+                                        navigation.navigate('ConfirmMnemonicsScreen', { mnemonics, password });
                                     }
                                 }}
                             />
@@ -201,4 +201,9 @@ const styles = StyleSheet.create({
         width: 70,
         height: 50,
     },
+    secretWords: {
+        color: secondBackground,
+        width: '82%',
+        alignSelf: 'center'
+    }
 });
