@@ -50,7 +50,7 @@ export default function TokenScreen({navigation,lang,route}){
                 <View style={styles.searchContainer}>
                     <TextInput
                         style={styles.searchInput}
-                        placeholder={`Search name or paste address`}
+                        placeholder={`Busca por nombre o pega direccion`}
                         value={keyword}
                         onChangeText={(text) => {
                             setKeywords(text);

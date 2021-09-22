@@ -25,7 +25,7 @@ export default function UniswapScreen({navigation}){
     const [toValue,setToValue] = useState('');
     const [trade,setTrade] = useState([]);
     const [rate,setRate] = useState(1);
-    const [error,setError] = useState('Enter an amount')
+    const [error,setError] = useState('Ingresar monto')
     const isValidTrade = (value) => {
         const finalValue = value;
         return !_.isEmpty(toToken.balance) && finalValue > 0 && finalValue != '';
