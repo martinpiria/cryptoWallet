@@ -125,7 +125,7 @@ export default function ViewWalletScreen({navigation,route,lang }){
                     </View>
                     <QRCode
                         value={wallet.address}
-                        logo={require('../../../assets/logo.png')}
+                        //logo={require('../../../assets/logo.png')}
                         size={300}
                     />
                 </View>

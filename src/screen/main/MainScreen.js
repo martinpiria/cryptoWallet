@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
-import {Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {defaultBackground, gray, green, white} from '../../component/common/LMStyle';
-import {useDispatch, useSelector} from 'react-redux';
-import {WalletAction} from '../../persistent/wallet/WalletAction';
+import React, { useEffect } from 'react';
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { defaultBackground, gray, green, white } from '../../component/common/LMStyle';
+import { useDispatch, useSelector } from 'react-redux';
+import { WalletAction } from '../../persistent/wallet/WalletAction';
 import LMSelect from '../../component/common/LMSelect';
 import LMLoading from '../../component/common/LMLoading';
 import Jazzicon from 'react-native-jazzicon';
@@ -14,35 +14,35 @@ import LMTouchableOpacity from '../../component/common/LMTouchableOpacity';
 import LMTokenIcon from '../../component/common/LMTokenIcon';
 import LMFlatList from '../../component/common/LMFlatList';
 import UniswapModule from '../../module/uniswap/UniswapModule';
-import {AssetAction} from '../../persistent/asset/AssetAction';
-import {TokenAction} from '../../persistent/token/TokenAction';
-import {LMStorageService} from '../../persistent/storage/LMStorageService';
+import { AssetAction } from '../../persistent/asset/AssetAction';
+import { TokenAction } from '../../persistent/token/TokenAction';
+import { LMStorageService } from '../../persistent/storage/LMStorageService';
 import NumberFormat from 'react-number-format';
 global.fetch = require('node-fetch');
 
-export default function MainScreen({navigation, route}) {
+export default function MainScreen({ navigation, route }) {
     const dispatch = useDispatch();
-    const {activeWallet, wallets} = useSelector(state => state.WalletReducer);
-    const {activeNetwork} = useSelector(state => state.NetworkReducer);
-    const {assets} = useSelector(state => state.AssetReducer);
-    const {language} = useSelector(state => state.LanguageReducer)
+    const { activeWallet, wallets } = useSelector(state => state.WalletReducer);
+    const { activeNetwork } = useSelector(state => state.NetworkReducer);
+    const { assets } = useSelector(state => state.AssetReducer);
+    const { language } = useSelector(state => state.LanguageReducer)
 
     useEffect(async () => {
-        dispatch(AssetAction.list(activeWallet.address,activeNetwork.chainId));
-        dispatch(TokenAction.getTokens({chainId: activeNetwork.chainId}));
+        dispatch(AssetAction.list(activeWallet.address, activeNetwork.chainId));
+        dispatch(TokenAction.getTokens({ chainId: activeNetwork.chainId }));
     }, []);
-    const renderItem =  ({item}) => {
+    const renderItem = ({ item }) => {
         return (
             <TouchableOpacity style={styles.item} onPress={async () => {
 
             }}>
-                <View style={{width: 40, justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <LMTokenIcon uri= {item.logoURI}/>
+                <View style={{ width: 40, justifyContent: 'center', alignItems: 'flex-start' }}>
+                    <LMTokenIcon uri={item.logoURI} />
                 </View>
-                <View style={{flex: 1, justifyContent: 'center'}}>
-                    <Text style={{fontSize: 14}}>{item.symbol}</Text>
+                <View style={{ flex: 1, justifyContent: 'center' }}>
+                    <Text style={{ fontSize: 14 }}>{item.symbol}</Text>
                 </View>
-                <View style={{justifyContent: 'center', alignItems: 'flex-start'}}>
+                <View style={{ justifyContent: 'center', alignItems: 'flex-start' }}>
                     <NumberFormat
                         value={item.balance.val}
                         displayType={'text'}
@@ -59,15 +59,16 @@ export default function MainScreen({navigation, route}) {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
-                <Image source={require('../../../assets/logo.png')} style={styles.logo} resizeMode={'stretch'}/>
-                <LMNetworkSelector/>
-                <TouchableOpacity style={[styles.logo, {alignItems: 'flex-end', justifyContent: 'center'}]}
-                                  onPress={() => {
-                                      navigation.navigate('ScannerScreen', {
-                                          screenName: 'TransferScreen',
-                                      });
-                                  }}>
-                    <Image source={require('../../../assets/qr-code.png')} style={styles.icon} resizeMode={'stretch'}/>
+                {/*<Image source={require('../../../assets/logo.png')} style={styles.logo} resizeMode={'stretch'}/>*/}
+                <View style={styles.logo}></View>
+                <LMNetworkSelector />
+                <TouchableOpacity style={[styles.logo, { alignItems: 'flex-end', justifyContent: 'center' }]}
+                    onPress={() => {
+                        navigation.navigate('ScannerScreen', {
+                            screenName: 'TransferScreen',
+                        });
+                    }}>
+                    <Image source={require('../../../assets/qr-code.png')} style={styles.icon} resizeMode={'stretch'} />
                 </TouchableOpacity>
             </View>
             <View style={styles.contentContainer}>
@@ -79,7 +80,7 @@ export default function MainScreen({navigation, route}) {
                             dispatch(WalletAction.setActiveWallet({
                                 privateKey: item.privateKey,
                                 name: item.name,
-                                chainId : activeNetwork.chainId
+                                chainId: activeNetwork.chainId
                             })).then(() => {
                                 LMLoading.hide();
                             });
@@ -90,16 +91,16 @@ export default function MainScreen({navigation, route}) {
                             return (
                                 <>
                                     <View
-                                        style={{width: 60, height: 60, justifyContent: 'center', alignItems: 'center'}}>
-                                        <Jazzicon size={32} address={item.address}/>
+                                        style={{ width: 60, height: 60, justifyContent: 'center', alignItems: 'center' }}>
+                                        <Jazzicon size={32} address={item.address} />
                                     </View>
-                                    <View style={{flex: 1, justifyContent: 'center'}}>
-                                        <Text style={{fontSize: 14}}>{item.name}</Text>
-                                        <LMCrypto value={item.balance}/>
-                                        <LMFiat value={item.balance}/>
+                                    <View style={{ flex: 1, justifyContent: 'center' }}>
+                                        <Text style={{ fontSize: 14 }}>{item.name}</Text>
+                                        <LMCrypto value={item.balance} />
+                                        <LMFiat value={item.balance} />
                                     </View>
                                     <View
-                                        style={{width: 60, height: 60, justifyContent: 'center', alignItems: 'center'}}>
+                                        style={{ width: 60, height: 60, justifyContent: 'center', alignItems: 'center' }}>
                                         {
                                             activeWallet.address == item.address &&
                                             <View style={{
@@ -119,15 +120,15 @@ export default function MainScreen({navigation, route}) {
                     });
 
                 }}>
-                    <View style={{flex: 1}}>
+                    <View style={{ flex: 1 }}>
                         <Text style={styles.title}><Jazzicon size={16}
-                                                             address={activeWallet.address}/>{activeWallet.name}</Text>
+                            address={activeWallet.address} />{activeWallet.name}</Text>
                         <Text numberOfLines={1}>{activeWallet.address}</Text>
                     </View>
-                    <View style={{flex: 1, justifyContent: 'center', alignItems: 'flex-end'}}>
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
 
-                        <LMCrypto value={activeWallet.balance}/>
-                        <LMFiat value={activeWallet.balance}/>
+                        <LMCrypto value={activeWallet.balance} />
+                        <LMFiat value={activeWallet.balance} />
                     </View>
                 </TouchableOpacity>
                 <View style={styles.operationContainer}>
@@ -135,33 +136,33 @@ export default function MainScreen({navigation, route}) {
                         navigation.navigate('TransferScreen');
                     }}>
                         <Image source={require('../../../assets/transfer.png')} style={styles.operationIcon}
-                               resizeMode={'stretch'}/>
-                        <Text style={{color: white}}>{language.transfer}</Text>
+                            resizeMode={'stretch'} />
+                        <Text style={{ color: white }}>{language.transfer}</Text>
                     </TouchableOpacity>
-                    <Image source={require('../../../assets/div.png')} style={styles.div} resizeMode={'stretch'}/>
+                    <Image source={require('../../../assets/div.png')} style={styles.div} resizeMode={'stretch'} />
                     <TouchableOpacity style={styles.operationItem} onPress={async () => {
                         navigation.navigate('TopUpScreen');
                     }}>
                         <Image source={require('../../../assets/topup.png')} style={styles.operationIcon}
-                               resizeMode={'stretch'}/>
-                        <Text style={{color: white}}>{language.topUp}</Text>
+                            resizeMode={'stretch'} />
+                        <Text style={{ color: white }}>{language.topUp}</Text>
                     </TouchableOpacity>
-                    <Image source={require('../../../assets/div.png')} style={styles.div} resizeMode={'stretch'}/>
+                    <Image source={require('../../../assets/div.png')} style={styles.div} resizeMode={'stretch'} />
                     <TouchableOpacity style={styles.operationItem} onPress={() => {
                         navigation.navigate('TransactionScreen');
                     }}>
                         <Image source={require('../../../assets/history.png')} style={styles.operationIcon}
-                               resizeMode={'stretch'}/>
-                        <Text style={{color: white}}>{language.history}</Text>
+                            resizeMode={'stretch'} />
+                        <Text style={{ color: white }}>{language.history}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.assets}>
                     <View style={styles.assetTitle}>
                         <Text style={styles.assetText}>{language.assets}</Text>
-                        <LMTouchableOpacity onPress={()=>{
-                            navigation.navigate("TokenScreen",{
-                                onSelect : async (token) => {
-                                    dispatch(AssetAction.addAsset(activeWallet.address,activeNetwork.chainId,token));
+                        <LMTouchableOpacity onPress={() => {
+                            navigation.navigate("TokenScreen", {
+                                onSelect: async (token) => {
+                                    dispatch(AssetAction.addAsset(activeWallet.address, activeNetwork.chainId, token));
                                 },
                             });
                         }}>
@@ -171,7 +172,7 @@ export default function MainScreen({navigation, route}) {
 
                     <LMFlatList
                         data={assets}
-                        keyExtractor={item=>item.symbol}
+                        keyExtractor={item => item.symbol}
                         renderItem={renderItem}
                     />
                 </View>
@@ -262,24 +263,24 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
     },
     assets: {
-        flex:1,
+        flex: 1,
     },
-    assetTitle : {
-        width : '100%',
-        height : 60,
+    assetTitle: {
+        width: '100%',
+        height: 60,
         justifyContent: 'space-between',
         alignItems: 'center',
-        flexDirection : 'row'
+        flexDirection: 'row'
     },
-    assetText : {
-        fontWeight:  'bold'
+    assetText: {
+        fontWeight: 'bold'
     },
-    icon: {width: 32, height: 32, backgroundColor: green, borderRadius: 5},
-    item : {
-        width : '100%',
-        height : 60,
-        borderBottomWidth : 0.5,
-        borderBottomColor : '#e2e2e2',
-        flexDirection:  'row'
+    icon: { width: 32, height: 32, backgroundColor: green, borderRadius: 5 },
+    item: {
+        width: '100%',
+        height: 60,
+        borderBottomWidth: 0.5,
+        borderBottomColor: '#e2e2e2',
+        flexDirection: 'row'
     },
 });

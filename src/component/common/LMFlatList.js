@@ -1,9 +1,9 @@
 import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 
-export default function LMFlatList(props){
-    const {data,renderItem} = props;
-    return(
+export default function LMFlatList(props) {
+    const { data, renderItem } = props;
+    return (
         <FlatList
             data={data}
             renderItem={renderItem}
@@ -11,10 +11,10 @@ export default function LMFlatList(props){
             removeClippedSubviews={true}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
-            ListEmptyComponent={()=>{
-                return <View style={{flex: 1, justifyContent : 'center', alignItems : 'center'}}>
+            ListEmptyComponent={() => {
+                return <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                     <Text>
-                        No data
+                        Sin datos
                     </Text>
                 </View>
             }}

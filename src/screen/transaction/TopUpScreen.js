@@ -40,7 +40,7 @@ export default function TopUpScreen({navigation,lang}){
                 <View style={styles.qrCode}>
                     <QRCode
                         value={activeWallet.address}
-                        logo={require('../../../assets/logo.png')}
+                        //logo={require('../../../assets/logo.png')}
                         size={300}
                     />
                 </View>

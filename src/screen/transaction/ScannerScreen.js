@@ -1,26 +1,26 @@
 import React from 'react';
-import {Image, SafeAreaView, StyleSheet, View} from 'react-native';
+import { Image, SafeAreaView, StyleSheet, View } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
-import {RNCamera} from 'react-native-camera';
-import {secondBackground} from '../../component/common/LMStyle';
+import { RNCamera } from 'react-native-camera';
+import { secondBackground } from '../../component/common/LMStyle';
 import LMBackButton from '../../component/common/LMBackButton';
 
-export default function ScannerScreen({navigation,route}){
-    const {screenName} = route.params;
+export default function ScannerScreen({ navigation, route }) {
+    const { screenName } = route.params;
     const onSuccess = e => {
         navigation.pop();
         navigation.navigate(screenName, {
-            qrCodeAddress : e.data
+            qrCodeAddress: e.data
         });
     };
     return (
-        <SafeAreaView style={{flex:1,backgroundColor : secondBackground}}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: secondBackground }}>
             <View style={styles.header}>
                 <LMBackButton color={'white'} onPress={() => {
                     navigation.goBack();
-                }}/>
-                <Image source={require('../../../assets/logo.png')} style={styles.logo} resizeMode={'stretch'}/>
-                <View style={{width : 40}}>
+                }} />
+                {/*<Image source={require('../../../assets/logo.png')} style={styles.logo} resizeMode={'stretch'}/>*/}
+                <View style={{ width: 40 }}>
 
                 </View>
             </View>
@@ -55,13 +55,13 @@ const styles = StyleSheet.create({
     header: {
         height: 50,
         width: '100%',
-        flexDirection : 'row',
-        justifyContent : 'space-between',
-        alignItems : 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         paddingRight: 10,
     },
-    logo : {
-        width : 70,
-        height : 50,
+    logo: {
+        width: 70,
+        height: 50,
     },
 });

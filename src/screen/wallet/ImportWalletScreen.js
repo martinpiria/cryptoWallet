@@ -1,43 +1,43 @@
-import React, {useState} from 'react';
-import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {green, primary, secondBackground} from '../../component/common/LMStyle';
+import React, { useState } from 'react';
+import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { green, primary, secondBackground } from '../../component/common/LMStyle';
 import LMButton from '../../component/common/LMButton';
-import {Root} from 'popup-ui';
+import { Root } from 'popup-ui';
 import LMTextInput from '../../component/common/LMTextInput';
-import {Controller, useForm} from 'react-hook-form';
-import {yupResolver} from '@hookform/resolvers/yup';
+import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import {useDispatch} from 'react-redux';
-import {UserAction} from '../../persistent/user/UserAction';
+import { useDispatch } from 'react-redux';
+import { UserAction } from '../../persistent/user/UserAction';
 import LMBackButton from '../../component/common/LMBackButton';
-import {WalletAction} from '../../persistent/wallet/WalletAction';
+import { WalletAction } from '../../persistent/wallet/WalletAction';
 import LMLoading from '../../component/common/LMLoading';
 import LMToast from '../../component/common/LMToast';
 
-export default function ImportWalletScreen({navigation,lang}){
+export default function ImportWalletScreen({ navigation, lang }) {
     const dispatch = useDispatch();
     const schema = yup.object().shape({
-        recoveryPhrase : yup.string().required(lang.walletSecretRecoveryPhrase),
-        password: yup.string().required(lang.pleaseInputPassword).min(8,lang.passwordMustBeAtLeast8Characters),
-        confirmPassword: yup.string().required(lang.pleaseInputConfirmPassword).oneOf([yup.ref('password'), null],lang.passwordMustMatch)
+        recoveryPhrase: yup.string().required(lang.walletSecretRecoveryPhrase),
+        password: yup.string().required(lang.pleaseInputPassword).min(8, lang.passwordMustBeAtLeast8Characters),
+        confirmPassword: yup.string().required(lang.pleaseInputConfirmPassword).oneOf([yup.ref('password'), null], lang.passwordMustMatch)
     });
-    const {control, handleSubmit, errors} = useForm({
+    const { control, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema),
     });
-    const [securePhrase,setSecurePhrase] = useState(true);
-    const [securePassword,setSecurePassword] = useState(true);
-    const onSubmit = async ({recoveryPhrase, password}) => {
+    const [securePhrase, setSecurePhrase] = useState(true);
+    const [securePassword, setSecurePassword] = useState(true);
+    const onSubmit = async ({ recoveryPhrase, password }) => {
         const mnemonics = recoveryPhrase.split(' ');
         LMLoading.show();
         await sleep(1000);
-        dispatch(WalletAction.addFromMnemonic({mnemonics, name: lang.defaultWalletName, isMain: true})).then(response => {
-            const {success, data} = response;
+        dispatch(WalletAction.addFromMnemonic({ mnemonics, name: lang.defaultWalletName, isMain: true })).then(response => {
+            const { success, data } = response;
             if (success) {
                 LMLoading.hide();
                 dispatch(UserAction.signUp({
                     password: password,
-                    walletAddress : data.address,
-                    secretRecoveryPhrase : mnemonics.join(' ')
+                    walletAddress: data.address,
+                    secretRecoveryPhrase: mnemonics.join(' ')
                 }));
             } else {
                 LMLoading.hide();
@@ -52,32 +52,33 @@ export default function ImportWalletScreen({navigation,lang}){
     return (
         <Root>
             <SafeAreaView style={styles.container}>
-                <Image source={require('../../../assets/circle.png')} style={styles.image} resizeMode={'stretch'}/>
+                <Image source={require('../../../assets/circle.png')} style={styles.image} resizeMode={'stretch'} />
                 <View style={styles.header}>
                     <LMBackButton color={'white'} onPress={() => {
                         navigation.pop();
                         navigation.navigate("CreateWalletScreen");
-                    }}/>
-                    <View style={{flex:1, justifyContent : 'center', alignItems : 'center'}}>
-                        <Image source={require('../../../assets/logo.png')} style={styles.logo} resizeMode={'stretch'}/>
+                    }} />
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                        {/*<Image source={require('../../../assets/logo.png')} style={styles.logo} resizeMode={'stretch'}/>*/}
+                        <View style={styles.logo} />
                     </View>
-                    <View style={{width : 40}}>
+                    <View style={{ width: 40 }}>
 
                     </View>
                 </View>
                 <View style={styles.contentContainer}>
 
                 </View>
-                <View style={{flex:1}}>
+                <View style={{ flex: 1 }}>
                     <View style={styles.bottomContainer}>
                         <View style={styles.infoContainer}>
                             <View style={styles.block}>
-                                <Text style={[styles.message, {fontSize: 32, textAlign: 'center'}]}>{lang.restoreYourWallet}</Text>
+                                <Text style={[styles.message, { fontSize: 32, textAlign: 'center' }]}>{lang.restoreYourWallet}</Text>
                             </View>
                             <View style={styles.block}>
                                 <Controller
                                     control={control}
-                                    render={({onChange, onBlur, value}) => (
+                                    render={({ onChange, onBlur, value }) => (
                                         <LMTextInput
                                             label={lang.walletSecretRecoveryPhrase}
                                             onBlur={onBlur}
@@ -85,7 +86,7 @@ export default function ImportWalletScreen({navigation,lang}){
                                             value={value}
                                             error={errors['recoveryPhrase']}
                                             placeholder={lang.enterOrPasteYourWalletSecretRecoveryPhrase}
-                                            labelStyle={{color : primary}}
+                                            labelStyle={{ color: primary }}
                                             secureTextEntry={securePhrase}
                                             hint={lang.clickToShow}
                                             onHintPress={async () => {
@@ -102,7 +103,7 @@ export default function ImportWalletScreen({navigation,lang}){
                             <View style={styles.block}>
                                 <Controller
                                     control={control}
-                                    render={({onChange, onBlur, value}) => (
+                                    render={({ onChange, onBlur, value }) => (
                                         <LMTextInput
                                             label={lang.password}
                                             onBlur={onBlur}
@@ -111,7 +112,7 @@ export default function ImportWalletScreen({navigation,lang}){
                                             error={errors['password']}
                                             secureTextEntry={securePassword}
                                             placeholder={lang.password}
-                                            labelStyle={{color : primary}}
+                                            labelStyle={{ color: primary }}
                                             hint={lang.clickHereToShowYourPassword}
                                             onHintPress={async () => {
                                                 setSecurePassword(false);
@@ -127,7 +128,7 @@ export default function ImportWalletScreen({navigation,lang}){
                             <View style={styles.block}>
                                 <Controller
                                     control={control}
-                                    render={({onChange, onBlur, value}) => (
+                                    render={({ onChange, onBlur, value }) => (
                                         <LMTextInput
                                             label={lang.confirmPassword}
                                             onBlur={onBlur}
@@ -136,7 +137,7 @@ export default function ImportWalletScreen({navigation,lang}){
                                             error={errors['confirmPassword']}
                                             secureTextEntry={securePassword}
                                             placeholder={lang.confirmPassword}
-                                            labelStyle={{color : primary}}
+                                            labelStyle={{ color: primary }}
                                             hint={lang.clickHereToShowYourPassword}
                                             onHintPress={async () => {
                                                 setSecurePassword(false);
@@ -150,10 +151,10 @@ export default function ImportWalletScreen({navigation,lang}){
                                 />
                             </View>
                         </View>
-                        <View style={[styles.buttonsContainer, {marginBottom : 5}]}>
+                        <View style={[styles.buttonsContainer, { marginBottom: 5 }]}>
                             <LMButton
                                 label={lang.confirm}
-                                onPress={ handleSubmit(onSubmit)}
+                                onPress={handleSubmit(onSubmit)}
                             />
                         </View>
                     </View>
@@ -247,8 +248,8 @@ const styles = StyleSheet.create({
         padding: 10,
         justifyContent: 'center',
     },
-    logo : {
-        width : 70,
-        height : 50,
+    logo: {
+        width: 70,
+        height: 50,
     },
 });

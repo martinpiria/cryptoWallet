@@ -30,7 +30,7 @@ function ApplicationNavigator() {
         return (
             <View style={{flex:1, justifyContent : 'center', alignItems : 'center'}}>
                 {/*replace logo.png by your photo*/}
-                <Image source={require('../../../assets/logo.png')} style={{width: 200, height:150}} resizeMode={'stretch'}/>
+                {/*<Image source={require('../../../assets/logo.png')} style={{width: 200, height:150}} resizeMode={'stretch'}/>*/}
             </View>
         )
 
